@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>管理中心</title>
+  <link href="/admin/skin/default/style.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/admin/scripts/base.js"></script>
+  <script src="/admin/scripts/common.js"></script>
+</head>
+<body class="mainbody">
+  <div class="location">
+    <a class="home"><i></i><span>首页</span></a>
+    <i class="arrow"></i>
+    <span>管理中心</span>
+  </div>
+  <div class="line10"></div>
+  <div class="nlist-1">
+    <ul>
+      <li>本次登录IP：<%=curIp %></li>
+      <li>上次登录IP：<%=lastLoginIp %></li>
+      <li>上次登录时间：<%=lastLoginTime %></li>
+    </ul>
+  </div>
+  <div class="line10"></div>
+  <div class="nlist-2">
+    <h3><i></i>站点信息</h3>
+    <ul>
+      <li>站点名称：<%=webName %></li>
+      <li>网站域名：<%=webUrl %></li>
+      <li>网站状态：<% if (!webStatus) { %><span style="color:red">已关闭</span><% } else { %><span style="color:green">运行中</span><% } %></li>
+      <li>系统邮箱：<%=sysEmail %></li>
+      <li>服务器名称：<%=hostName %></li>
+      <li>操作系统：<%=osType %></li>
+    </ul>
+  </div>
+  <div class="line20"></div>
+  <div class="nlist-3">
+    <ul>
+      <li><a onclick="parent.linkMenuTree(true, 'sys_config');" class="icon-setting" href="#"></a><span>系统设置</span></li>
+      <li><a onclick="parent.linkMenuTree(true, 'scene_list');" class="icon-channel" href="#"></a><span>场景管理</span></li>
+      <li><a onclick="parent.linkMenuTree(true, 'pagetpl_list');" class="icon-templet" href="#"></a><span>页面模板</span></li>
+      <li><a onclick="parent.linkMenuTree(true, 'user_list');" class="icon-user" href="#"></a><span>会员管理</span></li>
+      <li><a onclick="parent.linkMenuTree(true, 'manager_list');" class="icon-manaer" href="#"></a><span>管理员</span></li>
+      <li><a onclick="parent.linkMenuTree(true, 'manager_log');" class="icon-log" href="#"></a><span>管理日志</span></li>
+    </ul>
+  </div>
+</body>
+</html>

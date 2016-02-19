@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title><%=title %></title>
+  <link href="/admin/skin/default/style.css" rel="stylesheet">
+  <link href="/admin/scripts/artdialog/ui-dialog.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery.nicescroll/3.6.0/jquery.nicescroll.min.js"></script>
+  <script src="/admin/scripts/base.js"></script>
+  <script src="/admin/scripts/common.js"></script>
+  <script src="/admin/scripts/artdialog/dialog-plus-min.js"></script>
+</head>
+<body class="indexbody">
+  <div class="main-top">
+    <a class="icon-menu"></a>
+    <div id="main-nav" class="main-nav"></div>
+    <div class="nav-right">
+      <div class="info">
+        <i></i>
+        <span>您好，<%=admin.name %><br><%=admin.nickname %></span>
+      </div>
+      <div class="option">
+        <i></i>
+        <div class="drop-wrap">
+          <div class="arrow"></div>
+          <ul class="item">
+            <li>
+              <a href="/" target="_blank">预览网站</a>
+            </li>
+            <li>
+              <a href="/admin/center" target="mainframe">管理中心</a>
+            </li>
+            <li>
+              <a href="/admin/manager/edit?id=<%=admin.id %>" onclick="linkMenuTree(false, '');" target="mainframe">修改密码</a>
+            </li>
+            <li>
+              <a href="/admin/logout" class="logout">注销登录</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="main-left">
+    <h1 class="logo"></h1>
+    <div class="sidebar-nav" id="sidebar-nav"><% 
+    for (var i = 0; i < navData.length; i++) { 
+      if (navData[i].pid == 0) {
+      %>
+      <div class="list-group">
+        <h1 title="<%=navData[i].name %>"><img src="/admin/skin/default/nav/<%=navData[i].icon %>" /></h1>
+        <div class="list-wrap">
+          <h2><%=navData[i].name %><i></i></h2>
+          <ul><% 
+          for (var j = 0; j < navData.length; j++) { 
+            if (navData[j].pid == navData[i].id) {
+            %>
+            <li>
+              <a navid="<%=navData[j].callname %>" href="#" target="mainframe"><span><%=navData[j].name %></span></a>
+              <ul><% 
+              for (var k = 0; k < navData.length; k++) { 
+                if (navData[k].pid == navData[j].id) {
+                %>
+                <li>
+                  <a navid="<%=navData[k].callname %>" href="<%=navData[k].url %>" target="mainframe"><span><%=navData[k].name %></span></a>
+                </li><%
+                }
+              } 
+              %>
+              </ul>
+            </li><%
+            }
+          } 
+          %>
+          </ul>
+        </div>
+      </div><%
+      }
+    } 
+    %>
+    </div>
+  </div>  
+  <div class="main-container">
+    <iframe id="mainframe" name="mainframe" frameborder="0" src="/admin/center"></iframe>
+  </div>
+  <a class="btn-paograms" onclick="togglePopMenu();"></a>
+  <div id="pop-menu" class="pop-menu">
+    <div class="pop-box">
+      <h1 class="title"><i></i>导航菜单</h1>
+      <i class="close" onclick="togglePopMenu();">关闭</i>
+      <div class="list-box"></div>
+    </div>
+    <i class="arrow">箭头</i>
+  </div>
+</body>
+</html>

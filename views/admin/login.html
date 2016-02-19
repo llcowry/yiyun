@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title><%=title %></title>
+  <link href="/admin/skin/default/style.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/admin/scripts/base.js"></script>
+  <script src="/admin/scripts/common.js"></script>
+</head>
+<body class="loginbody">
+  <form id="frmLogin" method="post" action="/admin/login">
+    <div class="login-wrap">
+      <div class="login-logo white"></div>
+      <div class="login-form">
+        <div class="col">
+          <input name="username" type="text" id="user" class="login-input" placeholder="管理员账号">
+          <label class="icon user" for="user"></label>
+        </div>
+        <div class="col">
+          <input name="password" type="password" id="pwd" class="login-input" placeholder="管理员密码">
+          <label class="icon pwd" for="pwd"></label>
+        </div>
+        <div class="col">
+          <input type="submit" name="btnSubmit" value="登 录" class="login-btn" />
+        </div>
+      </div>
+      <div class="login-tips">
+        <i></i><p>如果忘记了密码，请联系管理员</p>
+      </div>
+    </div>
+    <div class="copy-right">
+      <p>Copyright © 2015 <%=webname %>. All rights reserved</p>
+    </div>
+  </form>
+</body>
+</html>

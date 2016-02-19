@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="app" ng-controller="AppCtrl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="<%= keywords %>">
+  <meta name="description" content="<%= description %>">
+  <title><%= title %></title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/jquery-jcrop/0.9.12/css/jquery.Jcrop.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/angular-ui-select/0.8.3/select.min.css">
+  <link rel="stylesheet" href="scripts/angular-ui-grid/ui-grid.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.vertical-tabs.min.css">
+  <link rel="stylesheet" href="styles/hint.min.css">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery-jcrop/0.9.12/js/jquery.Jcrop.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  <script src="//cdn.bootcss.com/angular.js/1.2.23/angular.min.js"></script>
+  <script src="//cdn.bootcss.com/angular.js/1.2.23/angular-route.min.js"></script>
+  <script src="//cdn.bootcss.com/angular.js/1.2.23/angular-animate.min.js"></script>
+  <script src="//cdn.bootcss.com/angular.js/1.2.23/angular-sanitize.min.js"></script>
+  <script src="//cdn.bootcss.com/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="//cdn.bootcss.com/angular-ui-select/0.8.3/select.min.js"></script>
+  <script src="//cdn.bootcss.com/angular-ui-sortable/0.13.0/sortable.min.js"></script>
+  <script src="//cdn.bootcss.com/angular-i18n/1.2.15/angular-locale_zh-cn.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdn.bootcss.com/Chart.js/1.0.1-beta.4/Chart.min.js"></script>
+  <script src="//cdn.bootcss.com/zeroclipboard/1.1.7/ZeroClipboard.min.js"></script>
+  <script src="//cdn.bootcss.com/hammer.js/2.0.4/hammer.min.js"></script>
+  <script src="scripts/angular-ui-grid/ui-grid.min.js"></script>
+  <script src="scripts/angular-file-upload.min.js"></script>
+  <script src="scripts/angular-file-upload-directives.min.js"></script>
+  <script src="scripts/bootstrap-wysiwyg.min.js"></script>
+  <script src="scripts/jquery.hotkeys.min.js"></script>
+  <script src="scripts/jquery.slides.min.js"></script>
+  <script src="scripts/flux.min.js"></script>
+  <script src="scripts/swipeSlide.min.js"></script>
+  <script src="scripts/config.js"></script>
+  <script src="scripts/common.js"></script>
+</head>
+<body>
+  <div id="notify" ng-include="'notifications.tpl.html'" ng-if="notifications.getCurrent().length"></div>
+  <div id="maincontainer" ng-view></div>
+</body>
+</html>

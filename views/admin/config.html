@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>系统设置</title>
+  <link href="/admin/skin/default/style.css" rel="stylesheet">
+  <link href="/admin/scripts/artdialog/ui-dialog.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/admin/scripts/jquery/Validform_v5.3.2_min.js"></script>
+  <script src="/admin/scripts/base.js"></script>
+  <script src="/admin/scripts/common.js"></script>
+  <script src="/admin/scripts/artdialog/dialog-plus-min.js"></script>
+</head>
+<body class="mainbody">
+  <div class="location">
+    <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+    <a href="/admin/center" class="home"><i></i><span>首页</span></a>
+    <i class="arrow"></i>
+    <span>系统设置</span>
+  </div>
+  <div class="line10"></div>
+  <form id="frmConfig" method="post" action="config">
+  <div id="floatHead" class="content-tab-wrap">
+    <div class="content-tab">
+      <div class="content-tab-ul-wrap">
+        <ul>
+          <li><a class="selected" href="#">系统基本信息</a></li>
+          <li><a href="#">邮件发送设置</a></li>
+          <li><a href="#">第三方接口信息</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content">
+    <dl>
+      <dt>主站名称</dt>
+      <dd>
+        <input type="text" id="webName" name="webName" class="input normal" value="<%=webname %>" datatype="*2-255" sucmsg=" ">
+        <span class="Validform_checktip">* 任意字符，控制在255个字符内</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>主站域名</dt>
+      <dd>
+        <input type="text" id="webUrl" name="webUrl" class="input normal" value="<%=weburl %>" datatype="*11-255" sucmsg=" ">
+        <span class="Validform_checktip">* 以“http://”开头，不能绑定到频道分类</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>网站标题</dt>
+      <dd>
+        <input type="text" id="webTitle" name="webTitle" class="input normal" value="<%=webtitle %>" datatype="*2-255" sucmsg=" ">
+        <span class="Validform_checktip">* 任意字符，控制在255个字符内</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>站点关键字</dt>
+      <dd>
+        <textarea id="webKey" name="webKey" class="input"><%=webkey %></textarea>
+      </dd>
+    </dl>
+    <dl>
+      <dt>站点描述</dt>
+      <dd>
+        <textarea id="webDes" name="webDes" class="input"><%=webdes %></textarea>
+      </dd>
+    </dl>
+    <dl>
+      <dt>主站备案号</dt>
+      <dd>
+        <input type="text" id="webIcp" name="webIcp" class="input normal" value="<%=webicp %>">
+      </dd>
+    </dl>
+    <dl>
+      <dt>开启管理日志</dt>
+      <dd>
+        <div class="rule-single-checkbox">
+          <input type="checkbox" id="logStatus" name="logStatus" value="1"<%=logstatus %>>
+        </div>
+        <span class="Validform_checktip">* 开启后将会记录管理员在后台的操作日志</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>是否开启网站</dt>
+      <dd>
+        <div class="rule-single-checkbox">
+          <input type="checkbox" id="webStatus" name="webStatus" value="1"<%=webstatus %>>
+        </div>
+        <span class="Validform_checktip">* 关闭后网站前台将不能访问</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>网站关闭原因</dt>
+      <dd>
+        <textarea id="webCloseReason" name="webCloseReason" class="input"><%=webclosereason %></textarea>
+        <span class="Validform_checktip">支持HTML</span>
+      </dd>
+    </dl>
+  </div>
+  <div class="tab-content hide">
+    <dl>
+      <dt>SMTP服务器</dt>
+      <dd>
+        <input type="text" id="mailSmtp" name="mailSmtp" class="input normal" value="<%=mailsmtp %>" datatype="*0-100" sucmsg=" ">
+        <span class="Validform_checktip">* 发送邮件的SMTP服务器地址</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>SSL加密连接</dt>
+      <dd>
+        <div class="rule-single-checkbox">
+          <input type="checkbox" id="mailSsl" name="mailSsl" value="1"<%=mailssl %>>
+        </div>
+        <span class="Validform_checktip">* 是否启用SSL加密连接</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>SMTP端口</dt>
+      <dd>
+        <input type="text" id="mailPort" name="mailPort" class="input small" value="<%=mailport %>" datatype="n" sucmsg=" ">
+        <span class="Validform_checktip">* SMTP服务器的端口，大部分服务商都支持25端口</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>邮箱账号</dt>
+      <dd>
+        <input type="text" id="mailUser" name="mailUser" class="input normal" value="<%=mailuser %>" datatype="*0-100" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>邮箱密码</dt>
+      <dd>
+        <input type="password" id="mailPass" name="mailPass" class="input normal" value="<%=mailpass %>" datatype="*0-100" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+  </div>
+  <div class="tab-content hide">
+    <dl>
+      <dt>微信AppID</dt>
+      <dd>
+        <input type="text" id="wxAppId" name="wxAppId" class="input normal" value="<%=wxappid %>" datatype="*18-18" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>微信AppSecret</dt>
+      <dd>
+        <input type="text" id="wxAppSecret" name="wxAppSecret" class="input normal" value="<%=wxappsecret %>" datatype="*32-32" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>微信ToKen</dt>
+      <dd>
+        <input type="text" id="wxToKen" name="wxToKen" class="input normal" value="<%=wxtoken %>" datatype="*3-32" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+    <dl>
+      <dt>QQAppID</dt>
+      <dd>
+        <input type="text" id="qqAppId" name="qqAppId" class="input normal" value="<%=qqappid %>" datatype="*9-9" sucmsg=" ">
+        <span class="Validform_checktip">*</span>
+      </dd>
+    </dl>
+  </div>
+  <div class="page-footer">
+    <div class="btn-wrap">
+      <input name="btnSubmit" type="submit" Text="提交保存" class="btn">
+      <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onclick="javascript:history.back(-1);">
+    </div>
+  </div>
+  </form>
+  <script>
+    $("#frmConfig").initValidform();
+  </script>
+</body>
+</html>

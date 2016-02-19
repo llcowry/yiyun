@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title><%=title %></title>
+  <link href="/admin/skin/default/style.css" rel="stylesheet">
+  <link href="/admin/scripts/artdialog/ui-dialog.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/admin/scripts/jquery/Validform_v5.3.2_min.js"></script>
+  <script src="/admin/scripts/base.js"></script>
+  <script src="/admin/scripts/common.js"></script>
+  <script src="/admin/scripts/artdialog/dialog-plus-min.js"></script>
+</head>
+<body class="mainbody">
+  <div class="location">
+    <a href="javascript:history.back(-1);" class="back"><i></i><span>返回上一页</span></a>
+    <a href="/admin/center" class="home"><i></i><span>首页</span></a>
+    <i class="arrow"></i>
+    <a href="/admin/scene_tag/list"><span>类别管理</span></a>
+    <i class="arrow"></i>
+    <span><%=title %></span>
+  </div>
+  <div class="line10"></div>
+  <form id="frmCategory" method="post" action="<%=action %>">
+  <div id="floatHead" class="content-tab-wrap">
+    <div class="content-tab">
+      <div class="content-tab-ul-wrap">
+        <ul>
+          <li><a class="selected" href="#">类别信息</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content" style="overflow: inherit;">
+    <dl>
+      <dt>所属父类别</dt>
+      <dd>
+        <div class="rule-single-select">
+          <select name="bizType" id="bizType"><% for (var i = 0; i < sceneTag.typeData.length; i++) { %>
+            <option value="<%=sceneTag.typeData[i].value %>"<% if (sceneTag.bizType==sceneTag.typeData[i].value) { %> selected<% } %>><%=sceneTag.typeData[i].name %></option><% } %>
+          </select>
+        </div>
+      </dd>
+    </dl> 
+    <dl>
+      <dt>类别名称</dt>
+      <dd>
+        <input name="name" type="text" id="name" class="input normal" value="<%=sceneTag.name %>" datatype="*1-100" sucmsg=" " ajaxurl="/admin/check?act=scenetag_validate&name=<%=sceneTag.name %>"> 
+        <span class="Validform_checktip">* 类别中文名称，100字符内</span>
+      </dd>
+    </dl>
+  </div>
+  <div class="page-footer">
+    <div class="btn-wrap">
+      <input type="submit" name="btnSubmit" value="提交保存" id="btnSubmit" class="btn">
+      <input type="button" name="btnReturn" value="返回上一页" class="btn yellow" onclick="javascript:history.back(-1);">
+    </div>
+  </div>
+  </form>
+  <script>
+    $("#frmCategory").initValidform();
+  </script>
+</body>
+</html>

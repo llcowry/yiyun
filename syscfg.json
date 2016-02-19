@@ -1,0 +1,22 @@
+{
+  "webName": "YiYun.XL",
+  "webUrl": "http://localhost:3000",
+  "webTitle": "YiYun.XL-移动场景应用自营销管家",
+  "webKey": "YiYun.XL-移动场景应用自营销管家",
+  "webDes": "YiYun.XL-移动场景应用自营销管家",
+  "webIcp": "湘ICP备13012373号-6",
+  "logStatus": false,
+  "webStatus": true,
+  "webCloseReason": "Sorry! the site is temporarily closed, please wait visit!",
+  "wxAppId": "wxd1c472592af4c488",
+  "wxAppSecret": "188802aa32bf2e0892baa07e9535e31b",
+  "wxToKen": "f9270a80a51c49130e2f15de0c2ed2e5",
+  "qqAppId": "101233065",
+  "sysMail": {
+    "service": "126",
+    "ssl": false,
+    "port": 465,
+    "user": "yitianjian555@126.com",
+    "pass": "ytjian607"
+  }
+}
