@@ -138,13 +138,6 @@ Utils.setSession = function setSession(req, res, user) {
 
 // 验证登录
 Utils.chkLogin = function chkLogin(req, res, next) {
-  // res.cookie('rememberMe', {
-  //   "uid": 1,
-  //   "username": "llcowry@126.com",
-  //   "nickname": "llcowry"
-  // }, {
-  //   maxAge: 86400000
-  // });
   if (req.cookies.rememberMe) {
     Utils.setSession(req, res, {
       "id": req.cookies.rememberMe.uid,
