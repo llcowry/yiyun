@@ -1,11 +1,10 @@
 {
   "name": "YiYun.XL",
+  "description": "",
   "version": "1.0.0",
+  "author": "llcowry <llcowry@126.com>",
+  "license": "MIT",
   "private": true,
-  "author": {
-    "name": "llcowry",
-    "email": "llcowrys@gmail.com"
-  },
   "scripts": {
     "start": "node ./bin/www"
   },
